@@ -20,12 +20,12 @@
   -->
 <!-- -->
 <xsl:template match="/pokedex">
-    <xsl:apply-templates select="XPATH-QUERY-GOES-HERE" />
+    <xsl:apply-templates select="/pokemon" />
 </xsl:template>
 
 <!-- Print the name (classification): types -->
 <xsl:template match="pokemon">
-    <xsl:value-of select="XPATH-QUERY-GOES-HERE" /> (<xsl:value-of select="XPATH-QUERY-GOES-HERE" />): <xsl:apply-templates select="XPATH-QUERY-GOES-HERE" /><xsl:text>
+    <xsl:value-of select="name/text()" /> (<xsl:value-of select="pokedexNumber/text()" />): <xsl:apply-templates select="type/text(fire)" /><xsl:text>
 </xsl:text>
 </xsl:template>
 
